@@ -60,7 +60,7 @@ async def on_message(message):
     if message.content.startswith("!ping"):
         all_message = str(message.content)
         ip_address = all_message.split()[1]
-        odpowiedz_web = os.system("ping -n 2 " + ip_address)
+        odpowiedz_web = os.system("ping -c 2 " + ip_address)
         if odpowiedz_web == False:
             await message.channel.send(ip_address+" :green_circle: Is online")
         elif odpowiedz_web == 256:
